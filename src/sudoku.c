@@ -132,6 +132,11 @@ void load_sudoku(SudokuBoard *p_board, char *textData)
             int num_candidates = 1;
             set_candidates(&(p_board->data[i / BOARD_SIZE][i % BOARD_SIZE]),
                            candidates, num_candidates);
+<<<<<<< HEAD
+=======
+            p_board->solved_cells[p_board->solved_counter++] =
+                &(p_board->data[i / BOARD_SIZE][i % BOARD_SIZE]);
+>>>>>>> efe80b5 (added hidden single description)
         }
         else
         {
@@ -233,12 +238,19 @@ int main(int argc, char **argv)
 
     SudokuBoard *board = malloc(sizeof(SudokuBoard));
     init_sudoku(board);
+<<<<<<< HEAD
     load_sudoku(board, argv[1]);
+=======
+    load_sudoku(board,
+                "00000402840600000510003060000030100008700014000070900000201000"
+                "3900000507670400000");
+>>>>>>> efe80b5 (added hidden single description)
 
     Cell **p_solved_cells = board->solved_cells;
     int solved_counter = board->solved_counter;
     while (board->solved_counter < BOARD_SIZE * BOARD_SIZE)
     {
+<<<<<<< HEAD
         solved_counter = check_solved_cells(board, &p_solved_cells);
         printf("check_solved_cells %d\n", solved_counter);
         if (show_possible(board, p_solved_cells, solved_counter))
@@ -252,6 +264,15 @@ int main(int argc, char **argv)
         //     printf("hidden_singles %d\n", solved_counter);
         //     continue;
         // }
+=======
+        while (show_possible(board, p_solved_cells, solved_counter))
+        {
+            solved_counter = check_solved_cells(board, &p_solved_cells);
+            printf("check_solved_cells %d\n", solved_counter);
+        }
+        // solved_counter = hidden_singles(board, &p_solved_cells);
+        // printf("hidden_singles %d\n", solved_counter);
+>>>>>>> efe80b5 (added hidden single description)
     }
     print_solution(board);
 
