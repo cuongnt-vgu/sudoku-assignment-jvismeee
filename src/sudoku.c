@@ -133,10 +133,13 @@ void load_sudoku(SudokuBoard *p_board, char *textData)
             set_candidates(&(p_board->data[i / BOARD_SIZE][i % BOARD_SIZE]),
                            candidates, num_candidates);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             p_board->solved_cells[p_board->solved_counter++] =
                 &(p_board->data[i / BOARD_SIZE][i % BOARD_SIZE]);
 >>>>>>> efe80b5 (added hidden single description)
+=======
+>>>>>>> 22f6780 (updated loop)
         }
         else
         {
@@ -239,17 +242,22 @@ int main(int argc, char **argv)
     SudokuBoard *board = malloc(sizeof(SudokuBoard));
     init_sudoku(board);
 <<<<<<< HEAD
+<<<<<<< HEAD
     load_sudoku(board, argv[1]);
 =======
     load_sudoku(board,
                 "00000402840600000510003060000030100008700014000070900000201000"
                 "3900000507670400000");
 >>>>>>> efe80b5 (added hidden single description)
+=======
+    load_sudoku(board, argv[1]);
+>>>>>>> 22f6780 (updated loop)
 
     Cell **p_solved_cells = board->solved_cells;
     int solved_counter = board->solved_counter;
     while (board->solved_counter < BOARD_SIZE * BOARD_SIZE)
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
         solved_counter = check_solved_cells(board, &p_solved_cells);
         printf("check_solved_cells %d\n", solved_counter);
@@ -266,13 +274,27 @@ int main(int argc, char **argv)
         // }
 =======
         while (show_possible(board, p_solved_cells, solved_counter))
+=======
+        solved_counter = check_solved_cells(board, &p_solved_cells);
+        printf("check_solved_cells %d\n", solved_counter);
+        if (show_possible(board, p_solved_cells, solved_counter))
+>>>>>>> 22f6780 (updated loop)
         {
-            solved_counter = check_solved_cells(board, &p_solved_cells);
-            printf("check_solved_cells %d\n", solved_counter);
+            printf("show_possible -> Yes\n");
+            continue;
         }
+<<<<<<< HEAD
         // solved_counter = hidden_singles(board, &p_solved_cells);
         // printf("hidden_singles %d\n", solved_counter);
 >>>>>>> efe80b5 (added hidden single description)
+=======
+        // solved_counter = hidden_singles(board);
+        // if (solved_counter)
+        // {
+        //     printf("hidden_singles %d\n", solved_counter);
+        //     continue;
+        // }
+>>>>>>> 22f6780 (updated loop)
     }
     print_solution(board);
 

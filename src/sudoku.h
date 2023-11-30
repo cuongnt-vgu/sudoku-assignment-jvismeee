@@ -5,25 +5,35 @@
 #define BOARD_SIZE 9
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 struct Cell_impl
 {
 =======
 struct Cell_impl {
 >>>>>>> efe80b5 (added hidden single description)
+=======
+struct Cell_impl
+{
+>>>>>>> 22f6780 (updated loop)
     int row_index;
     int col_index;
     int box_index;
     int num_candidates;
     int candidates[BOARD_SIZE];
 <<<<<<< HEAD
+<<<<<<< HEAD
     int value; // solved or 0
 =======
     int value;  // solved or 0
 >>>>>>> efe80b5 (added hidden single description)
+=======
+    int value; // solved or 0
+>>>>>>> 22f6780 (updated loop)
 };
 
 typedef struct Cell_impl Cell;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 struct SudokuBoard_impl
 {
@@ -37,15 +47,23 @@ struct SudokuBoard_impl
                        BOARD_SIZE]; // solved cell pointers (maximum)
 =======
 struct SudokuBoard_impl {
+=======
+struct SudokuBoard_impl
+{
+>>>>>>> 22f6780 (updated loop)
     int solved_counter;
-    Cell **data;  // 9x9 cell board
+    Cell **data; // 9x9 cell board
 
-    Cell **p_rows[BOARD_SIZE];   // rows pointers
-    Cell **p_cols[BOARD_SIZE];   // cols pointers
-    Cell **p_boxes[BOARD_SIZE];  // boxes pointers
+    Cell **p_rows[BOARD_SIZE];  // rows pointers
+    Cell **p_cols[BOARD_SIZE];  // cols pointers
+    Cell **p_boxes[BOARD_SIZE]; // boxes pointers
     Cell *solved_cells[BOARD_SIZE *
+<<<<<<< HEAD
                        BOARD_SIZE];  // solved cell pointers (maximum)
 >>>>>>> efe80b5 (added hidden single description)
+=======
+                       BOARD_SIZE]; // solved cell pointers (maximum)
+>>>>>>> 22f6780 (updated loop)
 };
 
 typedef struct SudokuBoard_impl SudokuBoard;
