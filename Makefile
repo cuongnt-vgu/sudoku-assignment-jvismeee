@@ -14,19 +14,7 @@ FLAGS = -ggdb3 -Wall -Wextra -Wshadow -std=gnu11 -Wno-unused-parameter -Wno-unus
 # endif
 
 FILES = $(wildcard src/*.c) $(wildcard src/*.h)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 OBJS = src/hidden_singles.o src/hidden_pair.o
-=======
-OBJS = src/hidden_singles.o
->>>>>>> efe80b5 (added hidden single description)
-=======
-OBJS = src/hidden_singles.o src/hidden_pair.o
->>>>>>> 6cb98dc (hidden pair)
-=======
-OBJS = src/hidden_singles.o src/hidden_pairs.o src/hidden_triples.o src/naked_pairs.o src/naked_triples.o src/naked_triples.o src/utils.o
->>>>>>> 13249bc (added tests)
 BINS = sudoku autograder
 
 TEST_COUNT = 10
