@@ -23,12 +23,16 @@ struct Cell_impl
 <<<<<<< HEAD
 <<<<<<< HEAD
     int value; // solved or 0
+<<<<<<< HEAD
 =======
     int value;  // solved or 0
 >>>>>>> efe80b5 (added hidden single description)
 =======
     int value; // solved or 0
 >>>>>>> 22f6780 (updated loop)
+=======
+    bool fixed;
+>>>>>>> 13249bc (added tests)
 };
 
 typedef struct Cell_impl Cell;
@@ -79,3 +83,7 @@ void set_candidate(Cell *cell, int value);
 void unset_candidate(Cell *cell, int value);
 void set_candidates(Cell *cell, int *candidates, int size);
 int *get_candidates(Cell *cell);
+
+int check_solved_cells(SudokuBoard *p_board, Cell ***p_solved_cells);
+bool show_possible(SudokuBoard *p_board, Cell **p_solved_cells, int counter);
+void free_sudoku(SudokuBoard *p_board);
