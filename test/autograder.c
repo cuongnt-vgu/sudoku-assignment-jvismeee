@@ -77,6 +77,7 @@ void load_cell_candidates(Cell *p_cell, char *textData)
         p_cell->fixed = true;
     else
         p_cell->fixed = false;
+        
 }
 
 void load_sudoku_with_candidates(SudokuBoard *p_board, char *textData)

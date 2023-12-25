@@ -96,4 +96,3 @@ int hidden_pairs(SudokuBoard *p_board) {
     int overlap = duplicate_hidden_pairs(hidden_pairs, counter);
     return (counter - overlap);
 }
-

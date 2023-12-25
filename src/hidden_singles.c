@@ -27,7 +27,7 @@ int identify_unique_candidates(Cell **p_cells, int *hidden_single_values) {
     return only_candidates;
 }
 
-void find_hidden_single(Cell **p_cells, HiddenSingle *p_hidden_singles, int *p_counter) {
+void identify_hidden_single(Cell **p_cells, HiddenSingle *p_hidden_singles, int *p_counter) {
     int hidden_single_values[BOARD_SIZE];
     for (int i = 0; i < identify_unique_candidates(p_cells, hidden_single_values); ++i) {
         for (int j = 0; j < BOARD_SIZE; ++j) {
@@ -48,9 +48,9 @@ int hidden_singles(SudokuBoard *p_board) {
     int duplicate = 0;
 
     for (int i = 0; i < BOARD_SIZE; ++i) {
-        find_hidden_single(p_board->p_rows[i], hidden_singles, &counter);
-        find_hidden_single(p_board->p_cols[i], hidden_singles, &counter);
-        find_hidden_single(p_board->p_boxes[i], hidden_singles, &counter);
+        identify_hidden_single(p_board->p_rows[i], hidden_singles, &counter);
+        identify_hidden_single(p_board->p_cols[i], hidden_singles, &counter);
+        identify_hidden_single(p_board->p_boxes[i], hidden_singles, &counter);
     }
 
     duplicate = counter; // Initialize duplicate
